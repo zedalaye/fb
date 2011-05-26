@@ -5,7 +5,7 @@ spec = Gem::Specification.new do |s|
   s.name = "fb"
   s.version = "0.6.7.1"
   s.date = "2010-12-30"
-  s.summary = "Firebird and Interbase driver"
+  s.summary = "Firebird RDBMS driver"
   s.requirements = "Firebird client library fbclient.dll, libfbclient.so or Firebird.framework."
   s.require_path = '.'
   s.author = "Brent Rowland"
@@ -13,7 +13,6 @@ spec = Gem::Specification.new do |s|
   s.homepage = "http://github.com/rowland/fb"
   s.rubyforge_project = "fblib"
   s.test_file = "test/FbTestSuite.rb"
-  s.has_rdoc = true
   s.extra_rdoc_files = ['README']
   s.rdoc_options << '--title' << 'Fb -- Ruby Firebird Extension' << '--main' << 'README' << '-x' << 'test'
   s.files = ['extconf.rb', 'fb.c', 'README', 'fb_extensions.rb'] + Dir.glob("test/*.rb")
@@ -23,6 +22,9 @@ spec = Gem::Specification.new do |s|
     Gem::Platform::RUBY
   end
   s.extensions = ['extconf.rb'] if s.platform == Gem::Platform::RUBY
+  s.description = <<-EOF
+    Firebird RDBMS driver for ruby
+  EOF
 end
 
 if __FILE__ == $0
